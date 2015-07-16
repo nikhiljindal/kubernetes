@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: swagger-tools
+  labels:
+    name: swagger-tools
+spec:
+  restartPolicy: Never
+  volumes:
+    - name: swagger-spec
+      hostPath:
+        path: /usr/local/google/home/nikhiljindal/code/kubernetes/src/github.com/nikhiljindal/kubernetes2/kubernetes/api/swagger-spec/
+  containers:
+  - name: swagger-tools
+    image: nikhiljindal/swagger-tools
+    volumeMounts:
+      - name: swagger-spec
+        mountPath: /spec/
+    command:
+      - swagger-tools
+      - validate
+      - /spec/resourceListing.json
+      - /spec/api.json
+      - /spec/v1beta3.json
+      - /spec/v1.json
+      - /spec/version.json
+    ports:
+    - containerPort: 80
