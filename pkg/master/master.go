@@ -51,6 +51,7 @@ import (
 	"k8s.io/kubernetes/pkg/master/ports"
 	"k8s.io/kubernetes/pkg/registry/componentstatus"
 	controlleretcd "k8s.io/kubernetes/pkg/registry/controller/etcd"
+	deploymentetcd "k8s.io/kubernetes/pkg/registry/deployment/etcd"
 	"k8s.io/kubernetes/pkg/registry/endpoint"
 	endpointsetcd "k8s.io/kubernetes/pkg/registry/endpoint/etcd"
 	eventetcd "k8s.io/kubernetes/pkg/registry/event/etcd"
@@ -784,12 +785,14 @@ func (m *Master) expapi(c *Config) *apiserver.APIGroupVersion {
 	controllerStorage := expcontrolleretcd.NewStorage(c.ExpDatabaseStorage)
 	autoscalerStorage := horizontalpodautoscaleretcd.NewREST(c.ExpDatabaseStorage)
 	thirdPartyResourceStorage := thirdpartyresourceetcd.NewREST(c.ExpDatabaseStorage)
+	deploymentStorage := deploymentetcd.NewREST(c.ExpDatabaseStorage)
 
 	storage := map[string]rest.Storage{
 		strings.ToLower("replicationControllers"):       controllerStorage.ReplicationController,
 		strings.ToLower("replicationControllers/scale"): controllerStorage.Scale,
 		strings.ToLower("horizontalpodautoscalers"):     autoscalerStorage,
 		"thirdpartyresources":                           thirdPartyResourceStorage,
+		"deployments":                                   deploymentStorage,
 	}
 
 	return &apiserver.APIGroupVersion{
