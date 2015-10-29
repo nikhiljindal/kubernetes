@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Welcome to k8PetStore\""
+---
+---
+layout: docwithnav
 title: "Welcome to k8PetStore"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -128,4 +132,5 @@ For questions about bigpetstore, and how the data is generated, ask on the apach
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/k8petstore/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

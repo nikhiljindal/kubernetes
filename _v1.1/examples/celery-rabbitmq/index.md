@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Example: Distributed task queues with Celery, RabbitMQ and Flower\""
+---
+---
+layout: docwithnav
 title: "Example: Distributed task queues with Celery, RabbitMQ and Flower"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -160,6 +164,7 @@ Like the RabbitMQ controller, this controller ensures that there is always a pod
 
 ```
 {% raw %}
+{% raw %}
 FROM library/celery
 
 ADD celery_conf.py /data/celery_conf.py
@@ -169,6 +174,7 @@ ADD run.sh /usr/local/bin/run.sh
 ENV C_FORCE_ROOT 1
 
 CMD ["/bin/bash", "/usr/local/bin/run.sh"]
+{% endraw %}
 {% endraw %}
 ```
 
@@ -236,7 +242,9 @@ On GCE this can be done with:
 
 ```
 {% raw %}
+{% raw %}
  $ gcloud compute firewall-rules create --allow=tcp:5555 --target-tags=kubernetes-minion kubernetes-minion-5555
+{% endraw %}
 {% endraw %}
 ```
 
@@ -290,10 +298,12 @@ Once all pods are up and running, running `kubectl get pods` will display someth
 
 ```
 {% raw %}
+{% raw %}
 NAME                                           READY     REASON       RESTARTS   AGE
 celery-controller-wqkz1                        1/1       Running      0          8m
 flower-controller-7bglc                        1/1       Running      0          7m
 rabbitmq-controller-5eb2l                      1/1       Running      0          13m
+{% endraw %}
 {% endraw %}
 ```
 
@@ -301,9 +311,11 @@ rabbitmq-controller-5eb2l                      1/1       Running      0         
 
 ```
 {% raw %}
+{% raw %}
 NAME             LABELS        SELECTOR                         IP(S)            PORT(S)
 flower-service   name=flower   app=taskQueue,component=flower   10.0.44.166      5555/TCP
                                                                 162.222.181.180
+{% endraw %}
 {% endraw %}
 ```
 
@@ -321,4 +333,5 @@ If you click on the tab called "Tasks", you should see an ever-growing list of t
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/celery-rabbitmq/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

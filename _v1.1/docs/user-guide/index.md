@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes User Guide: Managing Applications\""
+---
+---
+layout: docwithnav
 title: "Kubernetes User Guide: Managing Applications"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -116,4 +120,5 @@ If you don't have much familiarity with Kubernetes, we recommend you read the fo
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

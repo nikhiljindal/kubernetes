@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes Design Overview\""
+---
+---
+layout: docwithnav
 title: "Kubernetes Design Overview"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -36,4 +40,5 @@ For more about the Kubernetes architecture, see [architecture](architecture.html
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Node selection example\""
+---
+---
+layout: docwithnav
 title: "Node selection example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -79,4 +83,5 @@ While this example only covered one node, you can attach labels to as many nodes
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/node-selection/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

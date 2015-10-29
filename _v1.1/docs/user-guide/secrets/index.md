@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Secrets example\""
+---
+---
+layout: docwithnav
 title: "Secrets example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -85,4 +89,5 @@ $ kubectl logs secret-test-pod
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/secrets/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

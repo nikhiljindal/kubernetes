@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Step 1. Setting up Fibre Channel Target\""
+---
+---
+layout: docwithnav
 title: "Step 1. Setting up Fibre Channel Target"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -66,4 +70,5 @@ CONTAINER ID        IMAGE                                  COMMAND             C
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/fibre_channel/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

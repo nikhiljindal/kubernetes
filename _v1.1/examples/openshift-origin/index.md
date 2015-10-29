@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"OpenShift Origin example\""
+---
+---
+layout: docwithnav
 title: "OpenShift Origin example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -78,7 +82,9 @@ OpenShift Origin uses a configuration file to know how to access your Kubernetes
 
 ```
 {% raw %}
+{% raw %}
 $ cluster/kubectl.sh config view --output=yaml --flatten=true --minify=true > ${OPENSHIFT_CONFIG}/kubeconfig
+{% endraw %}
 {% endraw %}
 ```
 
@@ -173,7 +179,9 @@ First, update the ownership for the files previously generated:
 
 ```
 {% raw %}
+{% raw %}
 $ sudo -E chown -R ${USER} ${OPENSHIFT_CONFIG}
+{% endraw %}
 {% endraw %}
 ```
 
@@ -263,4 +271,5 @@ $ ${OPENSHIFT_EXAMPLE}/cleanup.sh
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/openshift-origin/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

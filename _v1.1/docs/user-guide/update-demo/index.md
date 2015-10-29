@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Rolling update example\""
+---
+---
+layout: docwithnav
 title: "Rolling update example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -160,4 +164,5 @@ Note that the images included here are public domain.
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/update-demo/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

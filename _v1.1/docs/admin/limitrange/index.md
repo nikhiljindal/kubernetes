@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Limit Range\""
+---
+---
+layout: docwithnav
 title: "Limit Range"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -191,11 +195,13 @@ that runs the container unless the administrator deploys the kubelet with the fo
 
 ```
 {% raw %}
+{% raw %}
 $ kubelet --help
 Usage of kubelet
 ....
   --cpu-cfs-quota[=false]: Enable CPU CFS quota enforcement for containers that specify CPU limits
 $ kubelet --cpu-cfs-quota=true ...
+{% endraw %}
 {% endraw %}
 ```
 
@@ -233,4 +239,5 @@ constrain the amount of resource a pod consumes on a node.
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/admin/limitrange/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

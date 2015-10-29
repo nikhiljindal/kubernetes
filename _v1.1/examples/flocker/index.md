@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Using Flocker volumes\""
+---
+---
+layout: docwithnav
 title: "Using Flocker volumes"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -121,4 +125,5 @@ $ curl ip
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/flocker/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

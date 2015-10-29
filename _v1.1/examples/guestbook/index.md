@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Guestbook Example\""
+---
+---
+layout: docwithnav
 title: "Guestbook Example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -126,7 +130,9 @@ redis-master-dz33o                             1/1       Running   0          2h
 
 ```
 {% raw %}
+{% raw %}
 kubectl get pods -o wide --all-namespaces=true
+{% endraw %}
 {% endraw %}
 ```
 
@@ -692,4 +698,5 @@ Then, see the [troubleshooting documentation](../../docs/troubleshooting.html) f
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/guestbook/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

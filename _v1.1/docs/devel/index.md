@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes Developer Guide\""
+---
+---
+layout: docwithnav
 title: "Kubernetes Developer Guide"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -93,4 +97,5 @@ Guide](../admin/README.html).
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"RethinkDB Cluster on Kubernetes\""
+---
+---
+layout: docwithnav
 title: "RethinkDB Cluster on Kubernetes"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -117,7 +121,9 @@ We request an external load balancer in the [admin-service.yaml](admin-service.y
 
 ```
 {% raw %}
+{% raw %}
 type: LoadBalancer
+{% endraw %}
 {% endraw %}
 ```
 
@@ -161,4 +167,5 @@ the generated pods which is using `nodeSelector` to force k8s to schedule contai
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/rethinkdb/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

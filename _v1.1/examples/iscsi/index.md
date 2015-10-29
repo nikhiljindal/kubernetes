@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Step 1. Setting up iSCSI target and iSCSI initiator\""
+---
+---
+layout: docwithnav
 title: "Step 1. Setting up iSCSI target and iSCSI initiator"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -102,4 +106,5 @@ Run *docker inspect* and I found the Containers mounted the host directory into 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/iscsi/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

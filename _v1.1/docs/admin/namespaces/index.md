@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes Namespaces\""
+---
+---
+layout: docwithnav
 title: "Kubernetes Namespaces"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -299,4 +303,5 @@ authorization rules for each namespace.
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/admin/namespaces/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes Documentation: releases.k8s.io/v1.1.0\""
+---
+---
+layout: docwithnav
 title: "Kubernetes Documentation: releases.k8s.io/v1.1.0"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -46,4 +50,5 @@ You should also check the [known issues](user-guide/known-issues.html) for the r
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"explorer/README\""
+---
+---
+layout: docwithnav
 title: "explorer/README"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -149,4 +153,5 @@ Error: &lt;*&gt;lookup elasticsearch-logging: no such host
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/explorer/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

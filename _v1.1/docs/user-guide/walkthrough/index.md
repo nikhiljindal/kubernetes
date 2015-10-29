@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Kubernetes 101 - Kubectl CLI and Pods\""
+---
+---
+layout: docwithnav
 title: "Kubernetes 101 - Kubectl CLI and Pods"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -229,4 +233,5 @@ for a complete application see the [guestbook example](../../../examples/guestbo
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/walkthrough/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

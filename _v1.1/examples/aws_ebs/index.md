@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"awsebs/README\""
+---
+---
+layout: docwithnav
 title: "aws_ebs/README"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -47,4 +51,5 @@ You should now be able to query your web server:
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/aws_ebs/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Example of NFS volume\""
+---
+---
+layout: docwithnav
 title: "Example of NFS volume"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -74,4 +78,5 @@ Now the pod serves `index.html` from the NFS server:
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/nfs/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

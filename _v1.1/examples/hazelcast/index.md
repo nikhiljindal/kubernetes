@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Cloud Native Deployments of Hazelcast using Kubernetes\""
+---
+---
+layout: docwithnav
 title: "Cloud Native Deployments of Hazelcast using Kubernetes"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -286,4 +290,5 @@ See [here](https://github.com/pires/hazelcast-kubernetes-bootstrapper/blob/maste
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/hazelcast/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

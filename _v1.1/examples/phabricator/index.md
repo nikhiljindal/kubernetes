@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Phabricator example\""
+---
+---
+layout: docwithnav
 title: "Phabricator example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -101,8 +105,10 @@ You'll see a single phabricator pod. It will also display the machine that the p
 
 ```
 {% raw %}
+{% raw %}
 NAME                           READY     STATUS    RESTARTS   AGE
 phabricator-controller-9vy68   1/1       Running   0          1m
+{% endraw %}
 {% endraw %}
 ```
 
@@ -290,4 +296,5 @@ $ cluster/kube-down.sh
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/phabricator/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

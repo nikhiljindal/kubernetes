@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Storm example\""
+---
+---
+layout: docwithnav
 title: "Storm example"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -204,4 +208,5 @@ Make sure the Nimbus Pod is running.
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/storm/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 

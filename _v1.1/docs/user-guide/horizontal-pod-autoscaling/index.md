@@ -1,5 +1,9 @@
 ---
 layout: docwithnav
+title: "title: \"Horizontal Pod Autoscaler\""
+---
+---
+layout: docwithnav
 title: "Horizontal Pod Autoscaler"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
@@ -22,7 +26,7 @@ This example requires a running Kubernetes cluster and kubectl in the version at
 ## Step One: Run & expose php-apache server
 
 To demonstrate horizontal pod autoscaler we will use a custom docker image based on php-apache server.
-The image can be found [here](https://releases.k8s.io/HEAD/docs/user-guide/horizontal-pod-autoscaling/image).
+The image can be found [here](https://releases.k8s.io/release-1.1/docs/user-guide/horizontal-pod-autoscaling/image).
 It defines [index.php](image/index.php) page which performs some CPU intensive computations.
 
 First, we will start a replication controller running the image and expose it as an external service:
@@ -123,8 +127,10 @@ The following command will create the equivalent autoscaler as defined in the [h
 
 ```
 {% raw %}
+{% raw %}
 $ kubectl autoscale rc php-apache --cpu-percent=50 --min=1 --max=10
 replicationcontroller "php-apache" autoscaled
+{% endraw %}
 {% endraw %}
 ```
 
@@ -226,4 +232,5 @@ As we see, in the presented case CPU utilization dropped to 0, and the number of
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/user-guide/horizontal-pod-autoscaling/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
 
