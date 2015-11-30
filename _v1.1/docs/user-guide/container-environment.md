@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Kubernetes Container Environment"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -63,7 +63,7 @@ FOO_SERVICE_PORT=<the port the service is running on>
 {% endraw %}
 {% endhighlight %}
 
-Services have dedicated IP address, and are also surfaced to the container via DNS (If [DNS addon](http://releases.k8s.io/v1.1.0/cluster/addons/dns/) is enabled).  Of course DNS is still not an enumerable protocol, so we will continue to provide environment variables so that containers can do discovery.
+Services have dedicated IP address, and are also surfaced to the container via DNS (If [DNS addon](http://releases.k8s.io/release-1.1/cluster/addons/dns/) is enabled).  Of course DNS is still not an enumerable protocol, so we will continue to provide environment variables so that containers can do discovery.
 
 ## Container Hooks
 
@@ -105,6 +105,13 @@ Hook handlers are the way that hooks are surfaced to containers.  Containers ca
    * HTTP - Executes an HTTP request against a specific endpoint on the container.
 
 [1]: http://man7.org/linux/man-pages/man2/gethostname.2.html
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

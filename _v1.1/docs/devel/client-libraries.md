@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Kubernetes API client libraries"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -11,7 +11,7 @@ title: "</strong>"
 
 ### Supported
 
-   * [Go](http://releases.k8s.io/v1.1.0/pkg/client/)
+   * [Go](http://releases.k8s.io/release-1.1/pkg/client/)
 
 ### User Contributed
 
@@ -25,6 +25,13 @@ title: "</strong>"
    * [PHP](https://github.com/maclof/kubernetes-client)
    * [Node.js](https://github.com/tenxcloud/node-kubernetes-client)
    * [Perl](https://metacpan.org/pod/Net::Kubernetes)
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

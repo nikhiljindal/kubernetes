@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Getting started from Scratch"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -204,7 +204,7 @@ You have several choices for Kubernetes images:
   - e.g `gcr.io/google_containers/hyperkube:$TAG`, where `TAG` is the latest
     release tag, which can be found on the [latest releases page](https://github.com/kubernetes/kubernetes/releases/latest).
   - Ensure $TAG is the same tag as the release tag you are using for kubelet and kube-proxy.
-  - The [hyperkube](https://releases.k8s.io/v1.1.0/cmd/hyperkube) binary is an all in one binary
+  - The [hyperkube](https://releases.k8s.io/HEAD/cmd/hyperkube) binary is an all in one binary
     - `hyperkube kubelet ...` runs the kublet, `hyperkube apiserver ...` runs an apiserver, etc.
 - Build your own images.
   - Useful if you are using a private registry.
@@ -357,7 +357,7 @@ as follows before proceeding to configure Docker for Kubernetes.
 
 {% highlight sh %}
 {% raw %}
-iptables -t nat -F 
+iptables -t nat -F
 ifconfig docker0 down
 brctl delbr docker0
 {% endraw %}
@@ -456,7 +456,7 @@ because of how this is used later.
   1. Set appropriate MTU
   - `ip link set dev cbr0 mtu 1460` (NOTE: the actual value of MTU will depend on your network environment)
   1. Add the clusters network to the bridge (docker will go on other side of bridge).
-  - e.g. `ip addr add $NODE_X_BRIDGE_ADDR dev cbr0`
+  - e.g. `ip addr add $NODE_X_BRIDGE_ADDR dev eth0`
   1. Turn it on
   - e.g. `ip link set dev cbr0 up`
 
@@ -466,7 +466,7 @@ the cluster network.  For example:
 
 {% highlight sh %}
 {% raw %}
-iptables -t nat -A POSTROUTING ! -d ${CLUSTER_SUBNET} -m addrtype ! --dst-type LOCAL -j MASQUERADE
+iptables -w -t nat -A POSTROUTING -o eth0 -j MASQUERADE \! -d ${CLUSTER_SUBNET}
 {% endraw %}
 {% endhighlight %}
 
@@ -484,7 +484,7 @@ traffic to the internet, but have no problem with them inside your GCE Project.
 
 - Enable auto-upgrades for your OS package manager, if desired.
 - Configure log rotation for all node components (e.g. using [logrotate](http://linux.die.net/man/8/logrotate)).
-- Setup liveness-monitoring (e.g. using [monit](http://linux.die.net/man/1/monit)).
+- Setup liveness-monitoring (e.g. using [supervisord](http://supervisord.org/)).
 - Setup volume plugin support (optional)
   - Install any client binaries for optional volume types, such as `glusterfs-client` for GlusterFS
     volumes.
@@ -654,7 +654,7 @@ Apiserver supports several cloud providers.
 
 - options for `--cloud-provider` flag are `aws`, `gce`, `mesos`, `openshift`, `ovirt`, `rackspace`, `vagrant`, or unset.
 - unset used for e.g. bare metal setups.
-- support for new IaaS is added by contributing code [here](https://releases.k8s.io/v1.1.0/pkg/cloudprovider/providers)
+- support for new IaaS is added by contributing code [here](https://releases.k8s.io/HEAD/pkg/cloudprovider/providers)
 
 Some cloud providers require a config file. If so, you need to put config file into apiserver image or mount through hostPath.
 
@@ -662,9 +662,9 @@ Some cloud providers require a config file. If so, you need to put config file i
 - Used by `aws`, `gce`, `mesos`, `openshift`, `ovirt` and `rackspace`.
 - You must put config file into apiserver image or mount through hostPath.
 - Cloud config file syntax is [Gcfg](https://code.google.com/p/gcfg/).
-- AWS format defined by type [AWSCloudConfig](https://releases.k8s.io/v1.1.0/pkg/cloudprovider/providers/aws/aws.go)
+- AWS format defined by type [AWSCloudConfig](https://releases.k8s.io/HEAD/pkg/cloudprovider/providers/aws/aws.go)
 - There is a similar type in the corresponding file for other cloud providers.
-- GCE example: search for `gce.conf` in [this file](https://releases.k8s.io/v1.1.0/cluster/gce/configure-vm.sh)
+- GCE example: search for `gce.conf` in [this file](https://releases.k8s.io/HEAD/cluster/gce/configure-vm.sh)
 
 #### Scheduler pod template
 
@@ -857,7 +857,7 @@ At this point you should be able to run through one of the basic examples, such 
 
 ### Running the Conformance Test
 
-You may want to try to run the [Conformance test](http://releases.k8s.io/v1.1.0/hack/conformance-test.sh).  Any failures may give a hint as to areas that need more attention.
+You may want to try to run the [Conformance test](http://releases.k8s.io/release-1.1/hack/conformance-test.sh).  Any failures may give a hint as to areas that need more attention.
 
 ### Networking
 
@@ -868,6 +868,13 @@ pinging or SSH-ing from one node to another.
 
 If you run into trouble, please see the section on [troubleshooting](gce.html#troubleshooting), post to the
 [google-containers group](https://groups.google.com/forum/#!forum/google-containers), or come ask questions on [Slack](../troubleshooting.html#slack).
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

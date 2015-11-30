@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "User Guide to Accessing the Cluster"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -119,7 +119,7 @@ The above example uses the `--insecure` flag.  This leaves it subject to MITM
 attacks.  When kubectl accesses the cluster it uses a stored root certificate
 and client certificates to access the server.  (These are installed in the
 `~/.kube` directory).  Since cluster certificates are typically self-signed, it
-may take special configuration to get your http client to use root
+make take special configuration to get your http client to use root
 certificate.
 
 On some clusters, the apiserver does not require authentication; it may serve
@@ -132,7 +132,7 @@ with future high-availability support.
 
 There are [client libraries](../devel/client-libraries.html) for accessing the API
 from several languages.  The Kubernetes project-supported
-[Go](http://releases.k8s.io/v1.1.0/pkg/client/)
+[Go](http://releases.k8s.io/release-1.1/pkg/client/)
 client library can use the same [kubeconfig file](kubeconfig-file.html)
 as the kubectl CLI does to locate and authenticate to the apiserver.
 
@@ -304,6 +304,13 @@ There are several different proxies you may encounter when using Kubernetes:
 
 Kubernetes users will typically not need to worry about anything other than the first two types.  The cluster admin
 will typically ensure that the latter types are setup correctly.
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

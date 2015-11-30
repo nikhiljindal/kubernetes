@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "The Kubernetes API"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -68,7 +68,7 @@ in more detail in the [API Changes documentation](devel/api_changes.html#alpha-b
 ## API groups
 
 To make it easier to extend the Kubernetes API, we are in the process of implementing [*API
-groups*](proposals/api-groups.md).  These are simply different interfaces to read and/or modify the
+groups*](proposals/api-group.html).  These are simply different interfaces to read and/or modify the
 same underlying resources.  The API group is specified in a REST path and in the `apiVersion` field
 of a serialized object.
 
@@ -132,6 +132,13 @@ Some important differences between v1beta1/2 and v1beta3:
 * Pull policies changed from `PullAlways`, `PullNever`, and `PullIfNotPresent` to `Always`, `Never`, and `IfNotPresent`.
 * The volume `source` is inlined into `volume` rather than nested.
 * Host volumes have been changed from `hostDir` to `hostPath` to better reflect that they can be files or directories.
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

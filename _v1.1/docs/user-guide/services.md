@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Services in Kubernetes"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -190,11 +190,11 @@ this example).
 Every node in a Kubernetes cluster runs a `kube-proxy`.  This application
 watches the Kubernetes master for the addition and removal of `Service`
 and `Endpoints` objects. For each `Service` it opens a port (randomly chosen)
-on the local node.  Any connections to `service`  port will be proxied to one of
-the corresponding backend `Pods`.  Which backend `Pod`  to use is decided based on the
+on the local node.  Any connections made to that port will be proxied to one of
+the corresponding backend `Pods`.  Which backend to use is decided based on the
 `SessionAffinity` of the `Service`.  Lastly, it installs iptables rules which
-capture traffic to the `Service`'s cluster IP (which is virtual) and `Port` then
-redirects that traffic to the backend `Pod` (`Endpoints`).
+capture traffic to the `Service`'s cluster IP (which is virtual) and `Port` and
+redirects that traffic to the previously described port.
 
 The net result is that any traffic bound for the `Service` is proxied to an
 appropriate backend without the clients knowing anything about Kubernetes or
@@ -283,7 +283,7 @@ variables and DNS.
 When a `Pod` is run on a `Node`, the kubelet adds a set of environment variables
 for each active `Service`.  It supports both [Docker links
 compatible](https://docs.docker.com/userguide/dockerlinks/) variables (see
-[makeLinkVariables](http://releases.k8s.io/v1.1.0/pkg/kubelet/envvars/envvars.go#L49))
+[makeLinkVariables](http://releases.k8s.io/release-1.1/pkg/kubelet/envvars/envvars.go#L49))
 and simpler `{SVCNAME}_SERVICE_HOST` and `{SVCNAME}_SERVICE_PORT` variables,
 where the Service name is upper-cased and dashes are converted to underscores.
 
@@ -310,7 +310,7 @@ variables will not be populated.  DNS does not have this restriction.
 ### DNS
 
 An optional (though strongly recommended) [cluster
-add-on](http://releases.k8s.io/v1.1.0/cluster/addons/README.md) is a DNS server.  The
+add-on](http://releases.k8s.io/release-1.1/cluster/addons/README.md) is a DNS server.  The
 DNS server watches the Kubernetes API for new `Services` and creates a set of
 DNS records for each.  If DNS has been enabled throughout the cluster then all
 `Pods` should be able to do name resolution of `Services` automatically.
@@ -577,7 +577,14 @@ of which `Pods` they are actually accessing.
 
 Service is a top-level resource in the kubernetes REST API. More details about the
 API object can be found at: [Service API
-object](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes/HEAD/docs/api-reference/v1/definitions.html#_v1_service).
+object](http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_service).
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

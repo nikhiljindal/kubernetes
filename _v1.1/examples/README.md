@@ -1,18 +1,23 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Kubernetes Examples: releases.k8s.io/release-1.1"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
 
 <!-- END MUNGE: UNVERSIONED_WARNING -->
 
-# Kubernetes Examples: releases.k8s.io/v1.1.0
+# Kubernetes Examples: releases.k8s.io/release-1.1
 
-This directory contains a number of examples of how to run
-real applications with Kubernetes.
+This directory contains a number of different examples of how to run
+applications with Kubernetes.
 
-Demonstrations of how to use specific Kubernetes features can be found in our [documents](../docs/).
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

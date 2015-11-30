@@ -1,13 +1,13 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Kubernetes Documentation: releases.k8s.io/release-1.1"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
 
 <!-- END MUNGE: UNVERSIONED_WARNING -->
 
-# Kubernetes Documentation: releases.k8s.io/v1.1.0
+# Kubernetes Documentation: releases.k8s.io/release-1.1
 
 * The [User's guide](user-guide/README.html) is for anyone who wants to run programs and
   services on an existing Kubernetes cluster.
@@ -34,6 +34,13 @@ title: "</strong>"
 You should also check the [known issues](user-guide/known-issues.html) for the release you're using.
 
 * To report a security issue, see [Reporting a Security Issue](reporting-security-issues.html).
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

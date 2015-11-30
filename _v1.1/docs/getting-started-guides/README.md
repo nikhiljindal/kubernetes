@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Creating a Kubernetes Cluster"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -170,6 +170,13 @@ Definition of columns:
 [2]: https://gist.github.com/derekwaynecarr/505e56036cdf010bf6b6
 <!-- GKE conformance test result -->
 [3]: https://gist.github.com/erictune/2f39b22f72565365e59b
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Getting a Binary Release"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -31,7 +31,14 @@ make release
 {% endraw %}
 {% endhighlight %}
 
-For more details on the release process see the [`build/` directory](http://releases.k8s.io/v1.1.0/build/)
+For more details on the release process see the [`build/` directory](http://releases.k8s.io/release-1.1/build/)
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

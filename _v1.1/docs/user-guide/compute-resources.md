@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Compute Resources"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -73,9 +73,9 @@ spec:
   - name: db
     image: mysql
     resources:
-	  requests:
-	    memory: "64Mi"
-		cpu: "250m"
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
       limits:
         memory: "128Mi"
         cpu: "500m"
@@ -83,9 +83,9 @@ spec:
     image: wordpress
     resources:
       requests:
-	    memory: "64Mi"
-		cpu: "250m"
-	  limits:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
         memory: "128Mi"
         cpu: "500m"
 {% endraw %}
@@ -132,7 +132,7 @@ To determine if a container cannot be scheduled or is being killed due to resour
 
 The resource usage of a pod is reported as part of the Pod status.
 
-If [optional monitoring](http://releases.k8s.io/v1.1.0/cluster/addons/cluster-monitoring/README.md) is configured for your cluster,
+If [optional monitoring](http://releases.k8s.io/release-1.1/cluster/addons/cluster-monitoring/README.md) is configured for your cluster,
 then pod resource usage can be retrieved from the monitoring system.
 
 ## Troubleshooting
@@ -276,6 +276,13 @@ machine types within the same cloud providers.  For example, on AWS, the capacit
 is reported in [ECUs](http://aws.amazon.com/ec2/faqs/), while in GCE it is reported in logical
 cores.  We plan to revise the definition of the cpu resource to allow for more consistency
 across providers and platforms.
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

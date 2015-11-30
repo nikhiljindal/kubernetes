@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Admission Controllers"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -162,6 +162,13 @@ For Kubernetes 1.0, we strongly recommend running the following set of admission
 --admission-control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota
 {% endraw %}
 ```
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: "</strong>"
+title: "Getting started on Microsoft Azure"
 ---
 <!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
 
@@ -11,6 +11,13 @@ Getting started on Microsoft Azure
 ----------------------------------
 
 Checkout the [coreos azure getting started guide](coreos/azure/README.html)
+
+
+
+
+<!-- BEGIN MUNGE: IS_VERSIONED -->
+<!-- TAG IS_VERSIONED -->
+<!-- END MUNGE: IS_VERSIONED -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
