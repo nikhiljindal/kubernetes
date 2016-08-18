@@ -55,15 +55,14 @@ ETCD_HOST=${ETCD_HOST:-127.0.0.1}
 ETCD_PORT=${ETCD_PORT:-2379}
 API_PORT=${API_PORT:-8050}
 API_HOST=${API_HOST:-127.0.0.1}
-KUBELET_PORT=${KUBELET_PORT:-10250}
 
 kube::etcd::start
 
 # Start kube-apiserver
 kube::log::status "Starting kube-apiserver"
 "${KUBE_OUTPUT_HOSTBIN}/kube-apiserver" \
-  --insecure-bind-address="127.0.0.1" \
-  --bind-address="127.0.0.1" \
+  --insecure-bind-address="${API_HOST}" \
+  --bind-address="${API_HOST}" \
   --insecure-port="${API_PORT}" \
   --etcd-servers="http://${ETCD_HOST}:${ETCD_PORT}" \
   --advertise-address="10.10.10.10" \
@@ -71,9 +70,9 @@ kube::log::status "Starting kube-apiserver"
   --service-cluster-ip-range="10.0.0.0/24" >/tmp/swagger-api-server.log 2>&1 &
 APISERVER_PID=$!
 
-kube::util::wait_for_url "http://127.0.0.1:${API_PORT}/healthz" "apiserver: "
+kube::util::wait_for_url "${API_HOST}:${API_PORT}/healthz" "apiserver: "
 
-SWAGGER_API_PATH="http://127.0.0.1:${API_PORT}/swaggerapi/"
+SWAGGER_API_PATH="${API_HOST}:${API_PORT}/swaggerapi/"
 DEFAULT_GROUP_VERSIONS="v1 apps/v1alpha1 authentication.k8s.io/v1beta1 authorization.k8s.io/v1beta1 autoscaling/v1 batch/v1 batch/v2alpha1 extensions/v1beta1 certificates/v1alpha1 policy/v1alpha1 rbac.authorization.k8s.io/v1alpha1"
 VERSIONS=${VERSIONS:-$DEFAULT_GROUP_VERSIONS}
 
