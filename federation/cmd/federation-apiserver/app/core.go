@@ -36,6 +36,7 @@ import (
 	"k8s.io/kubernetes/pkg/api"
 	configmapstore "k8s.io/kubernetes/pkg/registry/core/configmap/storage"
 	eventstore "k8s.io/kubernetes/pkg/registry/core/event/storage"
+	foostore "k8s.io/kubernetes/pkg/registry/core/foo/storage"
 	namespacestore "k8s.io/kubernetes/pkg/registry/core/namespace/storage"
 	secretstore "k8s.io/kubernetes/pkg/registry/core/secret/storage"
 	servicestore "k8s.io/kubernetes/pkg/registry/core/service/storage"
@@ -46,6 +47,7 @@ func installCoreAPIs(s *options.ServerRunOptions, g *genericapiserver.GenericAPI
 	namespaceStore, namespaceStatusStore, namespaceFinalizeStore := namespacestore.NewREST(optsGetter)
 	secretStore := secretstore.NewREST(optsGetter)
 	configMapStore := configmapstore.NewREST(optsGetter)
+	fooStore := foostore.NewREST(optsGetter)
 	eventStore := eventstore.NewREST(optsGetter, uint64(s.EventTTL.Seconds()))
 
 	coreResources := map[string]rest.Storage{
@@ -57,6 +59,7 @@ func installCoreAPIs(s *options.ServerRunOptions, g *genericapiserver.GenericAPI
 		"namespaces/finalize": namespaceFinalizeStore,
 		"events":              eventStore,
 		"configmaps":          configMapStore,
+		"foos":                fooStore,
 	}
 	coreGroupMeta := api.Registry.GroupOrDie(core.GroupName)
 	apiGroupInfo := genericapiserver.APIGroupInfo{
