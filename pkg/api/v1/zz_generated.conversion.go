@@ -133,6 +133,10 @@ func RegisterConversions(scheme *runtime.Scheme) error {
 		Convert_api_FlexVolumeSource_To_v1_FlexVolumeSource,
 		Convert_v1_FlockerVolumeSource_To_api_FlockerVolumeSource,
 		Convert_api_FlockerVolumeSource_To_v1_FlockerVolumeSource,
+		Convert_v1_Foo_To_api_Foo,
+		Convert_api_Foo_To_v1_Foo,
+		Convert_v1_FooList_To_api_FooList,
+		Convert_api_FooList_To_v1_FooList,
 		Convert_v1_GCEPersistentDiskVolumeSource_To_api_GCEPersistentDiskVolumeSource,
 		Convert_api_GCEPersistentDiskVolumeSource_To_v1_GCEPersistentDiskVolumeSource,
 		Convert_v1_GitRepoVolumeSource_To_api_GitRepoVolumeSource,
@@ -1542,6 +1546,50 @@ func autoConvert_api_FlockerVolumeSource_To_v1_FlockerVolumeSource(in *api.Flock
 
 func Convert_api_FlockerVolumeSource_To_v1_FlockerVolumeSource(in *api.FlockerVolumeSource, out *FlockerVolumeSource, s conversion.Scope) error {
 	return autoConvert_api_FlockerVolumeSource_To_v1_FlockerVolumeSource(in, out, s)
+}
+
+func autoConvert_v1_Foo_To_api_Foo(in *Foo, out *api.Foo, s conversion.Scope) error {
+	out.ObjectMeta = in.ObjectMeta
+	out.Data = *(*map[string]string)(unsafe.Pointer(&in.Data))
+	return nil
+}
+
+func Convert_v1_Foo_To_api_Foo(in *Foo, out *api.Foo, s conversion.Scope) error {
+	return autoConvert_v1_Foo_To_api_Foo(in, out, s)
+}
+
+func autoConvert_api_Foo_To_v1_Foo(in *api.Foo, out *Foo, s conversion.Scope) error {
+	out.ObjectMeta = in.ObjectMeta
+	out.Data = *(*map[string]string)(unsafe.Pointer(&in.Data))
+	return nil
+}
+
+func Convert_api_Foo_To_v1_Foo(in *api.Foo, out *Foo, s conversion.Scope) error {
+	return autoConvert_api_Foo_To_v1_Foo(in, out, s)
+}
+
+func autoConvert_v1_FooList_To_api_FooList(in *FooList, out *api.FooList, s conversion.Scope) error {
+	out.ListMeta = in.ListMeta
+	out.Items = *(*[]api.Foo)(unsafe.Pointer(&in.Items))
+	return nil
+}
+
+func Convert_v1_FooList_To_api_FooList(in *FooList, out *api.FooList, s conversion.Scope) error {
+	return autoConvert_v1_FooList_To_api_FooList(in, out, s)
+}
+
+func autoConvert_api_FooList_To_v1_FooList(in *api.FooList, out *FooList, s conversion.Scope) error {
+	out.ListMeta = in.ListMeta
+	if in.Items == nil {
+		out.Items = make([]Foo, 0)
+	} else {
+		out.Items = *(*[]Foo)(unsafe.Pointer(&in.Items))
+	}
+	return nil
+}
+
+func Convert_api_FooList_To_v1_FooList(in *api.FooList, out *FooList, s conversion.Scope) error {
+	return autoConvert_api_FooList_To_v1_FooList(in, out, s)
 }
 
 func autoConvert_v1_GCEPersistentDiskVolumeSource_To_api_GCEPersistentDiskVolumeSource(in *GCEPersistentDiskVolumeSource, out *api.GCEPersistentDiskVolumeSource, s conversion.Scope) error {

@@ -32,6 +32,8 @@ type Interface interface {
 	Endpoints() EndpointsInformer
 	// Events returns a EventInformer.
 	Events() EventInformer
+	// Foos returns a FooInformer.
+	Foos() FooInformer
 	// LimitRanges returns a LimitRangeInformer.
 	LimitRanges() LimitRangeInformer
 	// Namespaces returns a NamespaceInformer.
@@ -85,6 +87,11 @@ func (v *version) Endpoints() EndpointsInformer {
 // Events returns a EventInformer.
 func (v *version) Events() EventInformer {
 	return &eventInformer{factory: v.SharedInformerFactory}
+}
+
+// Foos returns a FooInformer.
+func (v *version) Foos() FooInformer {
+	return &fooInformer{factory: v.SharedInformerFactory}
 }
 
 // LimitRanges returns a LimitRangeInformer.

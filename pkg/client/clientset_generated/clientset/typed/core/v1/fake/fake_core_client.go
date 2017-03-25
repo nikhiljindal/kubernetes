@@ -42,6 +42,10 @@ func (c *FakeCoreV1) Events(namespace string) v1.EventInterface {
 	return &FakeEvents{c, namespace}
 }
 
+func (c *FakeCoreV1) Foos(namespace string) v1.FooInterface {
+	return &FakeFoos{c, namespace}
+}
+
 func (c *FakeCoreV1) LimitRanges(namespace string) v1.LimitRangeInterface {
 	return &FakeLimitRanges{c, namespace}
 }

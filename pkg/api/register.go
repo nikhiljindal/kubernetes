@@ -120,6 +120,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&SerializedReference{},
 		&RangeAllocation{},
 		&ConfigMap{},
+		&Foo{},
+		&FooList{},
 		&ConfigMapList{},
 	)
 

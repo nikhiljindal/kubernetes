@@ -3650,6 +3650,34 @@ type ConfigMapList struct {
 	Items []ConfigMap
 }
 
+// +genclient=true
+
+// Foo holds configuration data for pods to consume.
+type Foo struct {
+	metav1.TypeMeta
+	// Standard object's metadata.
+	// More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+	// +optional
+	metav1.ObjectMeta
+
+	// Data contains the configuration data.
+	// Each key must be a valid DNS_SUBDOMAIN with an optional leading dot.
+	// +optional
+	Data map[string]string
+}
+
+// ConfigMapList is a resource containing a list of ConfigMap objects.
+type FooList struct {
+	metav1.TypeMeta
+
+	// More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+	// +optional
+	metav1.ListMeta
+
+	// Items is the list of ConfigMaps.
+	Items []Foo
+}
+
 // These constants are for remote command execution and port forwarding and are
 // used by both the client side and server side components.
 //

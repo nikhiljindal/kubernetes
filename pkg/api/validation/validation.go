@@ -3434,6 +3434,16 @@ func ValidateConfigMapUpdate(newCfg, oldCfg *api.ConfigMap) field.ErrorList {
 	return allErrs
 }
 
+// ValidateConfigMap tests whether required fields in the ConfigMap are set.
+func ValidateFoo(cfg *api.Foo) field.ErrorList {
+	return field.ErrorList{}
+}
+
+// ValidateConfigMapUpdate tests if required fields in the ConfigMap are set.
+func ValidateFooUpdate(newCfg, oldCfg *api.Foo) field.ErrorList {
+	allErrs := field.ErrorList{}
+	return allErrs
+}
 func validateBasicResource(quantity resource.Quantity, fldPath *field.Path) field.ErrorList {
 	if quantity.Value() < 0 {
 		return field.ErrorList{field.Invalid(fldPath, quantity.Value(), "must be a valid resource quantity")}

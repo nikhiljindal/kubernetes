@@ -87,6 +87,8 @@ func RegisterDeepCopies(scheme *runtime.Scheme) error {
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_FCVolumeSource, InType: reflect.TypeOf(&FCVolumeSource{})},
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_FlexVolumeSource, InType: reflect.TypeOf(&FlexVolumeSource{})},
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_FlockerVolumeSource, InType: reflect.TypeOf(&FlockerVolumeSource{})},
+		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_Foo, InType: reflect.TypeOf(&Foo{})},
+		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_FooList, InType: reflect.TypeOf(&FooList{})},
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_GCEPersistentDiskVolumeSource, InType: reflect.TypeOf(&GCEPersistentDiskVolumeSource{})},
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_GitRepoVolumeSource, InType: reflect.TypeOf(&GitRepoVolumeSource{})},
 		conversion.GeneratedDeepCopyFunc{Fn: DeepCopy_api_GlusterfsVolumeSource, InType: reflect.TypeOf(&GlusterfsVolumeSource{})},
@@ -1125,6 +1127,45 @@ func DeepCopy_api_FlockerVolumeSource(in interface{}, out interface{}, c *conver
 		in := in.(*FlockerVolumeSource)
 		out := out.(*FlockerVolumeSource)
 		*out = *in
+		return nil
+	}
+}
+
+func DeepCopy_api_Foo(in interface{}, out interface{}, c *conversion.Cloner) error {
+	{
+		in := in.(*Foo)
+		out := out.(*Foo)
+		*out = *in
+		if newVal, err := c.DeepCopy(&in.ObjectMeta); err != nil {
+			return err
+		} else {
+			out.ObjectMeta = *newVal.(*v1.ObjectMeta)
+		}
+		if in.Data != nil {
+			in, out := &in.Data, &out.Data
+			*out = make(map[string]string)
+			for key, val := range *in {
+				(*out)[key] = val
+			}
+		}
+		return nil
+	}
+}
+
+func DeepCopy_api_FooList(in interface{}, out interface{}, c *conversion.Cloner) error {
+	{
+		in := in.(*FooList)
+		out := out.(*FooList)
+		*out = *in
+		if in.Items != nil {
+			in, out := &in.Items, &out.Items
+			*out = make([]Foo, len(*in))
+			for i := range *in {
+				if err := DeepCopy_api_Foo(&(*in)[i], &(*out)[i], c); err != nil {
+					return err
+				}
+			}
+		}
 		return nil
 	}
 }

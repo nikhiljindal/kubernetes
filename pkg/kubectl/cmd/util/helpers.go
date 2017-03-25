@@ -24,6 +24,7 @@ import (
 	"io/ioutil"
 	"net/url"
 	"os"
+	"runtime/debug"
 	"strings"
 	"time"
 
@@ -116,6 +117,11 @@ var ErrExit = fmt.Errorf("exit")
 // This method is generic to the command in use and may be used by non-Kubectl
 // commands.
 func CheckErr(err error) {
+	if err != nil {
+		glog.Infof("non nil err: %s", err)
+		debug.PrintStack()
+		glog.Fatalf("Error, lets see the stacktrace")
+	}
 	checkErr("", err, fatalErrHandler)
 }
 

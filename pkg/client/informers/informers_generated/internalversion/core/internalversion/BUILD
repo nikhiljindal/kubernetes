@@ -14,6 +14,7 @@ go_library(
         "configmap.go",
         "endpoints.go",
         "event.go",
+        "foo.go",
         "interface.go",
         "limitrange.go",
         "namespace.go",

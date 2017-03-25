@@ -22,6 +22,8 @@ type ConfigMapExpansion interface{}
 
 type EndpointsExpansion interface{}
 
+type FooExpansion interface{}
+
 type LimitRangeExpansion interface{}
 
 type PersistentVolumeExpansion interface{}

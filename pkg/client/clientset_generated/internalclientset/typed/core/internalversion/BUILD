@@ -17,6 +17,7 @@ go_library(
         "endpoints.go",
         "event.go",
         "event_expansion.go",
+        "foo.go",
         "generated_expansion.go",
         "limitrange.go",
         "namespace.go",

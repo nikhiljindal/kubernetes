@@ -4194,6 +4194,34 @@ type ConfigMapList struct {
 	Items []ConfigMap `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// +genclient=true
+
+// Foo holds configuration data for pods to consume.
+type Foo struct {
+	metav1.TypeMeta `json:",inline"`
+	// Standard object's metadata.
+	// More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+	// +optional
+	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+
+	// Data contains the configuration data.
+	// Each key must be a valid DNS_SUBDOMAIN with an optional leading dot.
+	// +optional
+	Data map[string]string `json:"data,omitempty" protobuf:"bytes,2,rep,name=data"`
+}
+
+// ConfigMapList is a resource containing a list of ConfigMap objects.
+type FooList struct {
+	metav1.TypeMeta `json:",inline"`
+
+	// More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+	// +optional
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+
+	// Items is the list of ConfigMaps.
+	Items []Foo `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
 // Type and constants for component health validation.
 type ComponentConditionType string
 

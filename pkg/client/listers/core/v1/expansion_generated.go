@@ -46,6 +46,14 @@ type EventListerExpansion interface{}
 // EventNamespaeLister.
 type EventNamespaceListerExpansion interface{}
 
+// FooListerExpansion allows custom methods to be added to
+// FooLister.
+type FooListerExpansion interface{}
+
+// FooNamespaceListerExpansion allows custom methods to be added to
+// FooNamespaeLister.
+type FooNamespaceListerExpansion interface{}
+
 // LimitRangeListerExpansion allows custom methods to be added to
 // LimitRangeLister.
 type LimitRangeListerExpansion interface{}

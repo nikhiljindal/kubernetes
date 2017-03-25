@@ -42,6 +42,10 @@ func (c *FakeCore) Events(namespace string) internalversion.EventInterface {
 	return &FakeEvents{c, namespace}
 }
 
+func (c *FakeCore) Foos(namespace string) internalversion.FooInterface {
+	return &FakeFoos{c, namespace}
+}
+
 func (c *FakeCore) LimitRanges(namespace string) internalversion.LimitRangeInterface {
 	return &FakeLimitRanges{c, namespace}
 }

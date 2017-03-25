@@ -169,6 +169,8 @@ func AddHandlers(h *printers.HumanReadablePrinter) {
 	h.Handler(horizontalPodAutoscalerColumns, nil, printHorizontalPodAutoscaler)
 	h.Handler(horizontalPodAutoscalerColumns, nil, printHorizontalPodAutoscalerList)
 	h.Handler(configMapColumns, nil, printConfigMap)
+	h.Handler(configMapColumns, nil, printFoo)
+	h.Handler(configMapColumns, nil, printFooList)
 	h.Handler(configMapColumns, nil, printConfigMapList)
 	h.Handler(podSecurityPolicyColumns, nil, printPodSecurityPolicy)
 	h.Handler(podSecurityPolicyColumns, nil, printPodSecurityPolicyList)
@@ -1785,6 +1787,35 @@ func printHorizontalPodAutoscaler(hpa *autoscaling.HorizontalPodAutoscaler, w io
 func printHorizontalPodAutoscalerList(list *autoscaling.HorizontalPodAutoscalerList, w io.Writer, options printers.PrintOptions) error {
 	for i := range list.Items {
 		if err := printHorizontalPodAutoscaler(&list.Items[i], w, options); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func printFoo(configMap *api.Foo, w io.Writer, options printers.PrintOptions) error {
+	name := formatResourceName(options.Kind, configMap.Name, options.WithKind)
+
+	namespace := configMap.Namespace
+
+	if options.WithNamespace {
+		if _, err := fmt.Fprintf(w, "%s\t", namespace); err != nil {
+			return err
+		}
+	}
+	if _, err := fmt.Fprintf(w, "%s\t%v\t%s", name, len(configMap.Data), translateTimestamp(configMap.CreationTimestamp)); err != nil {
+		return err
+	}
+	if _, err := fmt.Fprint(w, AppendLabels(configMap.Labels, options.ColumnLabels)); err != nil {
+		return err
+	}
+	_, err := fmt.Fprint(w, AppendAllLabels(options.ShowLabels, configMap.Labels))
+	return err
+}
+
+func printFooList(list *api.FooList, w io.Writer, options printers.PrintOptions) error {
+	for i := range list.Items {
+		if err := printFoo(&list.Items[i], w, options); err != nil {
 			return err
 		}
 	}
