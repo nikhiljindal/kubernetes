@@ -14,14 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package internalversion
+package util
 
-type ConfigMapExpansion interface{}
+import (
+	"reflect"
 
-type EventExpansion interface{}
+	api_v1 "k8s.io/kubernetes/pkg/api/v1"
+)
 
-type FooExpansion interface{}
-
-type SecretExpansion interface{}
-
-type ServiceExpansion interface{}
+// Checks if cluster-independent, user provided data in two given Foos are equal. If in
+// the future the Foo structure is expanded then any field that is not populated.
+// by the api server should be included here.
+func FooEquivalent(s1, s2 *api_v1.Foo) bool {
+	return ObjectMetaEquivalent(s1.ObjectMeta, s2.ObjectMeta) &&
+		reflect.DeepEqual(s1.Data, s2.Data)
+}

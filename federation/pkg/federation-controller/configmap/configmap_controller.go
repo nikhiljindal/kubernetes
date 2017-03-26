@@ -303,7 +303,6 @@ func (configmapcontroller *ConfigMapController) reconcileConfigMapsOnClusterChan
 }
 
 func (configmapcontroller *ConfigMapController) reconcileConfigMap(configmap types.NamespacedName) {
-
 	if !configmapcontroller.isSynced() {
 		glog.V(4).Infof("Configmap controller not synced")
 		configmapcontroller.deliverConfigMap(configmap, configmapcontroller.clusterAvailableDelay, false)
