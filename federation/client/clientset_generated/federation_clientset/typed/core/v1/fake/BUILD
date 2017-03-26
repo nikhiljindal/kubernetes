@@ -14,6 +14,7 @@ go_library(
         "fake_configmap.go",
         "fake_core_client.go",
         "fake_event.go",
+        "fake_foo.go",
         "fake_namespace.go",
         "fake_namespace_expansion.go",
         "fake_secret.go",

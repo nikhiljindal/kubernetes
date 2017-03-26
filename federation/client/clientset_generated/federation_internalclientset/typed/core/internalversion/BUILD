@@ -14,6 +14,7 @@ go_library(
         "core_client.go",
         "doc.go",
         "event.go",
+        "foo.go",
         "generated_expansion.go",
         "namespace.go",
         "namespace_expansion.go",

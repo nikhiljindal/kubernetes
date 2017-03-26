@@ -27,6 +27,7 @@ type CoreV1Interface interface {
 	RESTClient() rest.Interface
 	ConfigMapsGetter
 	EventsGetter
+	FoosGetter
 	NamespacesGetter
 	SecretsGetter
 	ServicesGetter
@@ -43,6 +44,10 @@ func (c *CoreV1Client) ConfigMaps(namespace string) ConfigMapInterface {
 
 func (c *CoreV1Client) Events(namespace string) EventInterface {
 	return newEvents(c, namespace)
+}
+
+func (c *CoreV1Client) Foos(namespace string) FooInterface {
+	return newFoos(c, namespace)
 }
 
 func (c *CoreV1Client) Namespaces() NamespaceInterface {

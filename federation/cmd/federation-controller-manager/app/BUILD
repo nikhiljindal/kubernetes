@@ -26,6 +26,7 @@ go_library(
         "//federation/pkg/federation-controller/configmap:go_default_library",
         "//federation/pkg/federation-controller/daemonset:go_default_library",
         "//federation/pkg/federation-controller/deployment:go_default_library",
+        "//federation/pkg/federation-controller/foo:go_default_library",
         "//federation/pkg/federation-controller/ingress:go_default_library",
         "//federation/pkg/federation-controller/namespace:go_default_library",
         "//federation/pkg/federation-controller/replicaset:go_default_library",

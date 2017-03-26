@@ -41,6 +41,7 @@ import (
 	configmapcontroller "k8s.io/kubernetes/federation/pkg/federation-controller/configmap"
 	daemonsetcontroller "k8s.io/kubernetes/federation/pkg/federation-controller/daemonset"
 	deploymentcontroller "k8s.io/kubernetes/federation/pkg/federation-controller/deployment"
+	foocontroller "k8s.io/kubernetes/federation/pkg/federation-controller/foo"
 	ingresscontroller "k8s.io/kubernetes/federation/pkg/federation-controller/ingress"
 	namespacecontroller "k8s.io/kubernetes/federation/pkg/federation-controller/namespace"
 	replicasetcontroller "k8s.io/kubernetes/federation/pkg/federation-controller/replicaset"
@@ -200,6 +201,12 @@ func StartControllers(s *options.CMServer, restClientCfg *restclient.Config) err
 		configmapcontrollerClientset := federationclientset.NewForConfigOrDie(restclient.AddUserAgent(restClientCfg, "configmap-controller"))
 		configmapcontroller := configmapcontroller.NewConfigMapController(configmapcontrollerClientset)
 		configmapcontroller.Run(wait.NeverStop)
+	}
+
+	if controllerEnabled(s.Controllers, serverResources, foocontroller.ControllerName, foocontroller.RequiredResources, true) {
+		foocontrollerClientset := federationclientset.NewForConfigOrDie(restclient.AddUserAgent(restClientCfg, "foo-controller"))
+		foocontroller := foocontroller.NewFooController(foocontrollerClientset)
+		foocontroller.Run(wait.NeverStop)
 	}
 
 	if controllerEnabled(s.Controllers, serverResources, daemonsetcontroller.ControllerName, daemonsetcontroller.RequiredResources, true) {
