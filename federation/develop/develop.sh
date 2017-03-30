@@ -131,7 +131,7 @@ print json.load(sys.stdin)["KUBE_VERSION"]')"
 function push() {
   local -r kube_version="$(get_version)"
 
-  kube::log::status "Pushing hyperkube image to the registry"
+  kube::log::status "Pushing hyperkube image version ${kube_version} to the registry"
   gcloud docker -- push "${KUBE_REGISTRY}/hyperkube-amd64:${kube_version}"
 }
 

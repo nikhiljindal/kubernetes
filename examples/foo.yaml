@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Foo
+metadata:
+  name: kubecon-foo
+  namespace: myns
+data:
+  demo: kubecon rocks!!
