@@ -828,7 +828,6 @@ func (e *Store) updateForGracefulDeletionAndFinalizers(ctx genericapirequest.Con
 
 // Delete removes the item from storage.
 func (e *Store) Delete(ctx genericapirequest.Context, name string, options *metav1.DeleteOptions) (runtime.Object, bool, error) {
-	fmt.Printf("In generic store. Delete")
 	key, err := e.KeyFunc(ctx, name)
 	if err != nil {
 		return nil, false, err
@@ -1002,7 +1001,7 @@ func (e *Store) finalizeDelete(obj runtime.Object, runHooks bool) (runtime.Objec
 	if err != nil {
 		return nil, err
 	}
-	details := &metav1.StatusDetails{Name: "fakename", UID: accessor.GetUID()}
+	details := &metav1.StatusDetails{UID: accessor.GetUID()}
 	status := &metav1.Status{Status: metav1.StatusSuccess, Details: details}
 	return status, nil
 }

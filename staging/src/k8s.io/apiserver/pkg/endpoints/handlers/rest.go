@@ -913,9 +913,7 @@ func DeleteResource(r rest.GracefulDeleter, allowsOptions bool, scope RequestSco
 			wasDeleted = deleted
 			return obj, err
 		})
-		glog.Infof("glogInfof printed")
-		glog.Infof("error: %v", err)
-		if err != nil && len(err.Error()) > 0 {
+		if err != nil {
 			scope.err(err, w, req)
 			return
 		}
